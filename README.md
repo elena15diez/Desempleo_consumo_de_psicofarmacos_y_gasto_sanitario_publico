@@ -1,8 +1,9 @@
-# Análisis y estudio de datos relacionados con el uso de auriculares y la pérdida auditiva
+# Desempleo, consumo de psicofármacos y gasto sanitario en las comunidades autónomas españolas
 ### Autores: Elena Diez García y Amaia Bolaños García
 ### Asignatura: Fuentes de Datos Biomédicas y Web Semántica
 ## Descripción del seminario
-Este seminario tiene como objetivo estudiar la relación entre el uso de auriculares y la pérdida auditiva en jóvenes. El uso de estos dispositivos electrónicos se ha vuelto popular en la sociedad actual, sobre todo en la población juvenil; por lo tanto, su uso frecuente durante periodos de tiempo elevados o volúmenes excesivos podría estar relacionado con el aumento de casos de problemas auditivos a temprana edad.
-Por esta razón se va a analizar la posible relación entre estas dos variables en este seminario, utilizando técnicas de análisis de datos con una base de datos real y verídica.
+En este proyecto se analizará la relación entre el consumo de psicofármacos y la tasa de desempleo en las diferentes comunidades autónomas de España.
+Además, se tendrá en cuenta el gasto en sanidad pública de cada comunidad y el partido político que gobierna en ella, con el objetivo de comparar las diferencias existentes entre los distintos territorios.
+A partir de estos datos, se estudiará si las comunidades con mayores tasas de desempleo presentan también diferencias en el consumo de psicofármacos y cómo se relacionan estos datos con el gasto sanitario público.
 ## Objetivo general del seminario
-Estudiar la relación entre el uso de auriculares y la pérdida auditiva en la población joven.
+Estudiar si existen diferencias y asociaciones entre el desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas, utilizando el partido de gobierno como variable descriptiva de contexto.
