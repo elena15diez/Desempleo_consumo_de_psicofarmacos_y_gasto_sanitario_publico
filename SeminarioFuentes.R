@@ -22,4 +22,9 @@ datos <- data.frame(
                             37.25, 23.17, 18.73, 40.82, 42.44, 46.15, 
                             32.11)
 )
-View(datos)
+# Ordenar por tasa de paro (de mayor a menor)
+tabla_resumen <- datos[order(-datos$Tasa_Paro), 
+                       c("CCAA", "Tasa_Paro", "Gasto_Sanitario", "Consumo_Psicofarmacos")]
+options (width = 500)
+print(tabla_resumen, row.names = FALSE)
+
