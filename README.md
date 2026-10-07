@@ -2,8 +2,8 @@
 ### Autores: Elena Diez García y Amaia Bolaños García
 ### Asignatura: Fuentes de Datos Biomédicas y Web Semántica
 ## Descripción del seminario
-En este proyecto se analizará la relación entre el consumo de psicofármacos y la tasa de desempleo en las diferentes comunidades autónomas de España.
-Además, se tendrá en cuenta el gasto en sanidad pública de cada comunidad, con el objetivo de comparar las diferencias existentes entre los distintos territorios.
-A partir de estos datos, se estudiará si las comunidades con mayores tasas de desempleo presentan también diferencias en el consumo de psicofármacos y cómo se relacionan estos datos con el gasto sanitario público.
+El desempleo es uno de los principales factores sociales y económicos que afectan al bienestar de la pablación española hoy en día. La situación laboral puede estar relacionada con algunos problemas de salud mental, lo que podría relacionarse a su vez con el consumo de determinados medicamentos, los psicofármacos. Además, las diferencias entre comunidades autónomas respecto al gasto sanitario puede ayudar a explicar parte de la variabilidad observada entre territorios.
+En este seminario se analizarán estas tres variables para estudiar su distribución entre las comunidades autónomas españolas y analizar si existe alguna relación entre la tasa de desempleo, el consumo de psicofármacos y el presupuesto en gasto sanitario.
 ## Objetivo general del seminario
-Estudiar si existen diferencias y asociaciones entre el desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas.
+Estudiar si existen diferencias y asociaciones entre la tasa desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas.
+## Objetivos específicos
