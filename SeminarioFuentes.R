@@ -22,9 +22,27 @@ datos <- data.frame(
                             37.25, 23.17, 18.73, 40.82, 42.44, 46.15, 
                             32.11)
 )
-# Ordenar por tasa de paro (de mayor a menor)
+# ============================================================
+# PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
+# ============================================================
+
+# 1. Tabla ordenada por paro
 tabla_resumen <- datos[order(-datos$Tasa_Paro), 
                        c("CCAA", "Tasa_Paro", "Gasto_Sanitario", "Consumo_Psicofarmacos")]
-options (width = 500)
+options(width = 500)
 print(tabla_resumen, row.names = FALSE)
+
+# 2. Correlación (solución numérica)
+cor(datos$Tasa_Paro, datos$Consumo_Psicofarmacos, use = "complete.obs")
+
+# 3. Gráfico (solución gráfica)
+ggplot2::ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
+  ggplot2::geom_point(color = "#c0392b", size = 4) +
+  ggplot2::geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
+  ggplot2::geom_text(aes(label = CCAA), vjust = -1, size = 3) +   # <-- AÑADIDO
+  ggplot2::labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
+                x = "Tasa de Paro (%)",
+                y = "Consumo de Psicofármacos (DHD)") +
+  ggplot2::theme_minimal()
+
 
