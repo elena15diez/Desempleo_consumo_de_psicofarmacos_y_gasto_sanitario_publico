@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
 ```
 
 ```{r}
@@ -49,13 +50,13 @@ print(tabla_resumen, row.names = FALSE)
 cor(datos$Tasa_Paro, datos$Consumo_Psicofarmacos, use = "complete.obs")
 
 # 3. Gráfico (solución gráfica)
-ggplot2::ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
-  ggplot2::geom_point(color = "#c0392b", size = 4) +
-  ggplot2::geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
-  ggplot2::geom_text(aes(label = CCAA), vjust = -1, size = 3) +   # <-- AÑADIDO
-  ggplot2::labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
-                x = "Tasa de Paro (%)",
-                y = "Consumo de Psicofármacos (DHD)") +
-  ggplot2::theme_minimal()
+ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
+  geom_point(color = "#c0392b", size = 4) +
+  geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
+  geom_text(aes(label = CCAA), vjust = -1, size = 3) +
+  labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
+       x = "Tasa de Paro (%)",
+       y = "Consumo de Psicofármacos (DHD)") +
+  theme_minimal()
 ```
 
