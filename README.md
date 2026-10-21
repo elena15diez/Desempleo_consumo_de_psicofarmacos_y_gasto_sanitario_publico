@@ -7,4 +7,5 @@ En este seminario se analizarán estas tres variables para estudiar su distribuc
 ## Objetivo general del seminario
 Estudiar si existen diferencias y asociaciones entre la tasa desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas.
 ## Objetivos específicos
-Objetivo 1: Determinar si existe una correlación entre la tasa de desempleo y el consumo de psicofármacos (ansiolíticos e hipnosedantes) en las 19 Comunidades Autónomas, evaluando si el paro actúa directamente en la salud mental de la población
+Objetivo 1: Determinar si existe una correlación entre la tasa de desempleo y el consumo de psicofármacos (ansiolíticos e hipnosedantes) en las 19 Comunidades Autónomas, evaluando si el paro actúa directamente en la salud mental de la población.
+Objetivo 2: Analizar si las comunidades autónomas con mayor tasa de desempleo reciben menor inversión sanitaria por habitante. Determinar si existe una brecha territorial donde las regiones más necesitadas cuentan con menos recursos para la salud.
