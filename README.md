@@ -6,6 +6,10 @@ El desempleo es uno de los principales determinantes sociales de la salud. Diver
 sino que también genera un profundo malestar psicológico, aumentando los niveles de ansiedad, estrés y depresión en la población. Ante esta situación, el consumo de psicofármacos 
 (como ansiolíticos e hipnosedantes) es una de las principales respuestas médicas para tratar estos síntomas.
 
+Lo que sabemos es que existe una tendencia en el consumo de estos medicamentos en España, y que la asistencia a los servicios de salud mental ha crecido en los últimos años. 
+Asimismo, sabemos que el sistema sanitario español está descentralizado, lo que provoca que cada Comunidad Autónoma gestione su presupuesto de manera diferente, generando desigualdades en el gasto sanitario.
+
+Lo que no sabemos con certeza es hasta qué punto la inversión económica en sanidad influye en el impacto del paro en la salud mental.
 
 ## Objetivo general del seminario
 Estudiar si existen diferencias y asociaciones entre la tasa desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas.
