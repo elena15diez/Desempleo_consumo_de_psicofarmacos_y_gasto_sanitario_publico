@@ -46,7 +46,7 @@ tabla_resumen <- datos[order(-datos$Tasa_Paro),
 options(width = 500)
 print(tabla_resumen, row.names = FALSE)
 
-# 2. Correlación (solución numérica)
+# 2. Correlación entre paro y consumo de psicofármacos (solución numérica)
 cor(datos$Tasa_Paro, datos$Consumo_Psicofarmacos, use = "complete.obs")
 
 # 3. Gráfico (solución gráfica)
@@ -57,6 +57,28 @@ ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
   labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
        x = "Tasa de Paro (%)",
        y = "Consumo de Psicofármacos (DHD)") +
+  theme_minimal()
+```
+
+PREGUNTA 2: ¿Las CCAA con más paro gastan menos en sanidad?
+
+```{r}
+# 1. Tabla ordenada por paro
+tabla_resumen <- datos[order(-datos$Tasa_Paro), 
+                       c("CCAA", "Tasa_Paro", "Gasto_Sanitario")]
+options(width = 500)
+print(tabla_resumen, row.names = FALSE)
+
+# 2. Correlación entre paro y gasto sanitario (Solución numérica)
+cor(datos$Tasa_Paro, datos$Gasto_Sanitario, use = "complete.obs")
+
+# 3. Gráfico (solución gráfica)
+ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
+  geom_point(color = "#2980b9", size = 4) +
+  geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
+  geom_text(aes(label = CCAA), vjust = -1, size = 3, check_overlap = TRUE) +
+  labs(title = "Relación entre Tasa de Paro y Gasto Sanitario",
+       x = "Tasa de Paro (%)", y = "Gasto Sanitario (€)") +
   theme_minimal()
 ```
 
