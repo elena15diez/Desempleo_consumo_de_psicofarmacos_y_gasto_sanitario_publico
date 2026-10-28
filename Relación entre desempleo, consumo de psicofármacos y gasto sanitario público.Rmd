@@ -27,8 +27,6 @@ Objetivo 3: Analizar si las comunidades autónomas con mayor tasa de desempleo r
 cuentan con menos recursos para la salud.
 
 ## 3. Caracterización de las variables
-Caracterización de las variables
-
 Para  este trabajo se han utilizado tres variables principales, todas ellas son cuantitativas continuas:
 
 Tasa de Paro (%): Presenta una elevada dispersión territorial. La media nacional analizada se sitúa en el 11,27% (calculado con mean(datos$Tasa_Paro)), con un rango muy amplio que va desde el mínimo de Islas Baleares 6,1% (obtenido con min(datos$Tasa_Paro)) hasta el máximo de Ceuta 22,4% (usando max(datos$Tasa_Paro)).
