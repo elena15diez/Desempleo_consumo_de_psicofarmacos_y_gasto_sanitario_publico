@@ -27,6 +27,15 @@ Objetivo 3: Analizar si las comunidades autónomas con mayor tasa de desempleo r
 cuentan con menos recursos para la salud.
 
 ## 3. Caracterización de las variables
+Caracterización de las variables
+
+Para  este trabajo se han utilizado tres variables principales, todas ellas son cuantitativas continuas:
+
+Tasa de Paro (%): Presenta una elevada dispersión territorial. La media nacional analizada se sitúa en el 11,27% (calculado con mean(datos$Tasa_Paro)), con un rango muy amplio que va desde el mínimo de Islas Baleares 6,1% (obtenido con min(datos$Tasa_Paro)) hasta el máximo de Ceuta 22,4% (usando max(datos$Tasa_Paro)).
+
+Gasto Sanitario (€/habitante): Muestra las diferencias en inversión pública en salud. La media se sitúa en 2010,53€ (mediante mean(datos$Gasto_Sanitario, na.rm = TRUE)). Destaca Asturias como la comunidad que más invierte 2506,71€ (con max(datos$Gasto_Sanitario, na.rm = TRUE)), frente a Murcia, que es la que menos gasta de las que tienen datos 1511,18€ (a través de min(datos$Gasto_Sanitario, na.rm = TRUE)). Se advierte que Ceuta y Melilla no disponen de datos en esta variable, por lo que se excluyen de los análisis que la incluyen.
+
+Consumo de Psicofármacos (DHD): Indica la medicalización de la salud mental (Dosis Diarias Definidas por cada 1.000 habitantes). La media es de 37,98 dosis (calculada con mean(datos$Consumo_Psicofarmacos)). Cantabria registra el pico más alto con mucha diferencia 63,22 (según max(datos$Consumo_Psicofarmacos)), mientras que Melilla registra el consumo más bajo 18,73 (usando min(datos$Consumo_Psicofarmacos)).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
