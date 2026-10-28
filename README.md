@@ -14,5 +14,9 @@ Lo que no sabemos con certeza es hasta qué punto la inversión económica en sa
 ## Objetivo general del seminario
 Estudiar si existen diferencias y asociaciones entre la tasa desempleo, el consumo de psicofármacos y el gasto sanitario público entre las comunidades autónomas españolas.
 ## Objetivos específicos
-Objetivo 1: Determinar si existe una correlación entre la tasa de desempleo y el consumo de psicofármacos (ansiolíticos e hipnosedantes) en las 19 Comunidades Autónomas, evaluando si el paro actúa directamente en la salud mental de la población.
-Objetivo 2: Analizar si las comunidades autónomas con mayor tasa de desempleo reciben menor inversión sanitaria por habitante. Determinar si existe una brecha territorial donde las regiones más necesitadas cuentan con menos recursos para la salud.
+Objetivo 1: Determinar si existe una correlación entre la tasa de desempleo y el consumo de psicofármacos (ansiolíticos e hipnosedantes) en las 19 Comunidades Autónomas, evaluando si el paro actúa directamente 
+en la salud mental de la población.
+Objetivo 2: Evaluar si el nivel de inversión sanitaria influye en el consumo de psicofármacos en comunidades con tasas de desempleo similares. Determinar si un mayor gasto sanitario actúa como factor protector 
+frente al impacto negativo del paro en la salud mental.
+Objetivo 3: Analizar si las comunidades autónomas con mayor tasa de desempleo reciben menor inversión sanitaria por habitante. Determinar si existe una brecha territorial donde las regiones más necesitadas 
+cuentan con menos recursos para la salud.
