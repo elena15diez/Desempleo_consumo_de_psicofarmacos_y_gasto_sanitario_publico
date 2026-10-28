@@ -60,7 +60,7 @@ datos <- data.frame(
 )
 ```
 
-PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
+## PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
 
 ```{r}
 # 1. Tabla ordenada por paro
@@ -82,6 +82,9 @@ ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
        y = "Consumo de Psicofármacos (DHD)") +
   theme_minimal()
 ```
+
+### Conclusión de la pregunta 1: 
+La correlación entre la tasa de paro y el consumo de psicofármacos es de 0.42, lo que indica una relación positiva. Esto significa que, en general, las comunidades con más paro tienden a consumir más psicofármacos. Sin embargo, el valor no es cercano a 1, por lo que el paro no explica por sí solo el consumo: hay otras variables que también influyen. En el gráfico se observa una tendencia ascendente, pero con una dispersión considerable.
 
 PREGUNTA 2: ¿El gasto sanitario modula el efecto del paro sobre el consumo? 
 
@@ -111,7 +114,7 @@ ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarma
   theme(axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"))
 ```
 
-PREGUNTA 3: ¿Las CCAA con más paro gastan menos en sanidad?
+## PREGUNTA 3: ¿Las CCAA con más paro gastan menos en sanidad?
 
 ```{r}
 # 1. Tabla ordenada por paro
@@ -133,3 +136,5 @@ ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
   theme_minimal()
 ```
 
+### Conclusión de la pregunta 3:
+La correlación entre paro y gasto sanitario es de -0.21, lo que indica una relación negativa débil. Esto significa que, en general, las comunidades con más paro tienden a gastar ligeramente menos en sanidad por habitante. Se observa, por ejemplo, que Andalucía (paro 14.6%) tiene un gasto de 1870€, mientras que País Vasco (paro 7.1%) gasta 2373€. Esto refleja una desigualdad territorial: las CCAA con más necesidad reciben menos inversión sanitaria por habitante, lo que puede agravar los problemas de salud mental.
