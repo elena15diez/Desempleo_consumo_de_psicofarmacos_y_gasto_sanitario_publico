@@ -82,3 +82,32 @@ ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
   theme_minimal()
 ```
 
+PREGUNTA 3: ¿El gasto sanitario modula el efecto del paro sobre el consumo?
+
+
+```{r}
+# 1. Tabla: Filtramos las CCAA con paro entre 9% y 15% (paro similar)
+tabla_p3 <- datos[datos$Tasa_Paro >= 9 & datos$Tasa_Paro <= 15, 
+                  c("CCAA", "Tasa_Paro", "Gasto_Sanitario", "Consumo_Psicofarmacos")]
+
+# Ordenamos la tabla por gasto sanitario (de mayor a menor)
+tabla_p3 <- tabla_p3[order(-tabla_p3$Gasto_Sanitario), ]
+options(width = 500)
+print(tabla_p3, row.names = FALSE)
+
+# 2. Correlación entre gasto y consumo
+cor(datos$Gasto_Sanitario, datos$Consumo_Psicofarmacos, use = "complete.obs")
+
+# 3. Gráfico de barras comparativo (¡Ahora con más CCAA!)
+ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarmacos, fill = Gasto_Sanitario)) +
+  geom_bar(stat = "identity", color = "black", width = 0.6) +
+  geom_text(aes(label = Consumo_Psicofarmacos), vjust = -0.5, size = 4, fontface = "bold") +
+  scale_fill_gradient(low = "#3498db", high = "#c0392b", name = "Gasto (€)") +
+  labs(title = "Consumo de Psicofármacos en CCAA con Paro Similar",
+       subtitle = "Ordenadas de mayor a menor Gasto Sanitario",
+       x = "Comunidad Autónoma", 
+       y = "Consumo de Psicofármacos (DHD)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"))
+```
+
