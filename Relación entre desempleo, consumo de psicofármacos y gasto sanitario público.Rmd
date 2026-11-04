@@ -4,6 +4,7 @@ author: "Elena Diez y Amaia Bolaños"
 date: "2026-10-14"
 output: html_document
 ---
+
 ## 1. Introducción del seminario
 El desempleo es uno de los principales determinantes sociales de la salud. Diversos estudios han demostrado que la falta de trabajo no solo afecta a los ingresos económicos, 
 sino que también genera un profundo malestar psicológico, aumentando los niveles de ansiedad, estrés y depresión en la población. Ante esta situación, el consumo de psicofármacos 
@@ -26,20 +27,11 @@ frente al impacto negativo del paro en la salud mental.
 Objetivo 3: Analizar si las comunidades autónomas con mayor tasa de desempleo reciben menor inversión sanitaria por habitante. Determinar si existe una brecha territorial donde las regiones más necesitadas 
 cuentan con menos recursos para la salud.
 
-## 3. Caracterización de las variables
-Para  este trabajo se han utilizado tres variables principales, todas ellas son cuantitativas continuas:
-
-Tasa de Paro (%): Presenta una elevada dispersión territorial. La media nacional analizada se sitúa en el 11,27% (calculado con mean(datos$Tasa_Paro)), con un rango muy amplio que va desde el mínimo de Islas Baleares 6,1% (obtenido con min(datos$Tasa_Paro)) hasta el máximo de Ceuta 22,4% (usando max(datos$Tasa_Paro)).
-
-Gasto Sanitario (€/habitante): Muestra las diferencias en inversión pública en salud. La media se sitúa en 2010,53€ (mediante mean(datos$Gasto_Sanitario, na.rm = TRUE)). Destaca Asturias como la comunidad que más invierte 2506,71€ (con max(datos$Gasto_Sanitario, na.rm = TRUE)), frente a Murcia, que es la que menos gasta de las que tienen datos 1511,18€ (a través de min(datos$Gasto_Sanitario, na.rm = TRUE)). Se advierte que Ceuta y Melilla no disponen de datos en esta variable, por lo que se excluyen de los análisis que la incluyen.
-
-Consumo de Psicofármacos (DHD): Indica la medicalización de la salud mental (Dosis Diarias Definidas por cada 1.000 habitantes). La media es de 37,98 dosis (calculada con mean(datos$Consumo_Psicofarmacos)). Cantabria registra el pico más alto con mucha diferencia 63,22 (según max(datos$Consumo_Psicofarmacos)), mientras que Melilla registra el consumo más bajo 18,73 (usando min(datos$Consumo_Psicofarmacos)).
-
+## 3.Datos
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 ```
-
 ```{r}
 datos <- data.frame(
   # Tabla con las 19 comunidades autónomas
@@ -67,6 +59,28 @@ datos <- data.frame(
 )
 ```
 
+## 4. Caracterización de las variables
+Para  este trabajo se han utilizado tres variables principales, todas ellas son cuantitativas continuas:
+
+Tasa de Paro (%): Presenta una elevada dispersión territorial. La media nacional analizada se sitúa en el 10,65%, con un rango muy amplio que va desde el mínimo de Islas Baleares 6,1%, hasta el máximo de Ceuta 22,4%.
+```{r}
+mean(datos$Tasa_Paro)
+min(datos$Tasa_Paro)
+max(datos$Tasa_Paro)
+```
+Gasto Sanitario (€/habitante): Muestra las diferencias en inversión pública en salud. La media se sitúa en 2013,721€. Destaca Asturias como la comunidad que más invierte 2506,71€, frente a Murcia, que es la que menos gasta de las que tienen datos 1511,18€. Se advierte que Ceuta y Melilla no disponen de datos en esta variable, por lo que se excluyen de los análisis.
+```{r}
+mean(datos$Gasto_Sanitario, na.rm = TRUE)
+max(datos$Gasto_Sanitario, na.rm = TRUE)
+min(datos$Gasto_Sanitario, na.rm = TRUE)
+```
+
+Consumo de Psicofármacos (DHD): Indica la medicalización de la salud mental (Dosis Diarias Definidas por cada 1.000 habitantes). La media es de 37,30 dosis. Cantabria registra el pico más alto con mucha diferencia 63,22, mientras que Melilla registra el consumo más bajo 18,73.
+```{r}
+mean(datos$Consumo_Psicofarmacos)
+max(datos$Consumo_Psicofarmacos)
+min(datos$Consumo_Psicofarmacos)
+```
 ## PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
 
 ```{r}
