@@ -68,7 +68,6 @@ min(datos$Tasa_Paro)
 max(datos$Tasa_Paro)
 ```
 
-
 Gasto Sanitario (€/habitante): Muestra las diferencias en inversión pública en salud. La media se sitúa en 2013,72€. Destaca Asturias como la comunidad que más invierte 2506,71€, frente a Murcia, que es la que menos gasta de las que tienen datos 1511,18€. Se advierte que Ceuta y Melilla no disponen de datos en esta variable, por lo que se excluyen de los análisis que la incluyen.
 ```{r}
 mean(datos$Gasto_Sanitario, na.rm = TRUE)
