@@ -82,6 +82,39 @@ max(datos$Consumo_Psicofarmacos)
 min(datos$Consumo_Psicofarmacos)
 ```
 
+### Distribución de la tasa de paro y el consumo de psicofármacos en las CCAA
+```{r}
+tabla_carac_1 <- datos[order(-datos$Tasa_Paro), 
+                       c("CCAA", "Tasa_Paro", "Consumo_Psicofarmacos")]
+
+options(width = 500)
+print(tabla_carac_1, row.names = FALSE)
+```
+
+```{r}
+# Para que el gráfico quede limpio, necesitamos transformar los datos a formato "largo"
+library(tidyr)
+
+datos_largos <- datos %>%
+  select(CCAA, Tasa_Paro, Consumo_Psicofarmacos) %>%
+  pivot_longer(cols = c(Tasa_Paro, Consumo_Psicofarmacos),
+               names_to = "Variable",
+               values_to = "Valor") %>%
+  # Traducimos los nombres para que salgan bonitos en la leyenda
+  mutate(Variable = ifelse(Variable == "Tasa_Paro", "Tasa de Paro (%)", "Consumo Psicofármacos (DHD)"))
+
+# Hacemos el gráfico de barras comparativo
+ggplot(datos_largos, aes(x = reorder(CCAA, -Valor), y = Valor, fill = Variable)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  scale_fill_manual(values = c("#c0392b", "#2980b9")) +
+  labs(title = "Distribución de Paro y Psicofármacos por CCAA",
+       subtitle = "Comparativa territorial (ordenado por magnitud)",
+       x = "Comunidad Autónoma", 
+       y = "Valor",
+       fill = "Variable") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
+```
 
 ## PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
 
