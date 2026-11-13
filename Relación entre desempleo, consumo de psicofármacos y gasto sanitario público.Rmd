@@ -92,7 +92,6 @@ print(tabla_carac_1, row.names = FALSE)
 ```
 
 ```{r}
-# Para que el gráfico quede limpio, necesitamos transformar los datos a formato "largo"
 library(tidyr)
 
 datos_largos <- datos %>%
@@ -100,10 +99,8 @@ datos_largos <- datos %>%
   pivot_longer(cols = c(Tasa_Paro, Consumo_Psicofarmacos),
                names_to = "Variable",
                values_to = "Valor") %>%
-  # Traducimos los nombres para que salgan bonitos en la leyenda
   mutate(Variable = ifelse(Variable == "Tasa_Paro", "Tasa de Paro (%)", "Consumo Psicofármacos (DHD)"))
 
-# Hacemos el gráfico de barras comparativo
 ggplot(datos_largos, aes(x = reorder(CCAA, -Valor), y = Valor, fill = Variable)) +
   geom_bar(stat = "identity", position = "dodge", color = "black") +
   scale_fill_manual(values = c("#c0392b", "#2980b9")) +
