@@ -1,9 +1,21 @@
 ---
 title: "Relación entre desempleo, consumo de psicofármacos y gasto sanitario público"
 author: "Elena Diez y Amaia Bolaños"
-date: "2026-10-14"
+date: "2026-11-30"
 output: html_document
 ---
+```{=html}
+<style>
+body {
+  background: url(C:\Users\elena\Downloads\Simple Medical Background.jpeg);
+}
+.main-container {
+  background-color: #ffffff;
+}
+</style>
+```
+
+
 ## 1. Introducción del seminario
 El desempleo es uno de los principales determinantes sociales de la salud. Diversos estudios han demostrado que la falta de trabajo no solo afecta a los ingresos económicos, 
 sino que también genera un profundo malestar psicológico, aumentando los niveles de ansiedad, estrés y depresión en la población. Ante esta situación, el consumo de psicofármacos 
@@ -30,7 +42,10 @@ cuentan con menos recursos para la salud.
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 library(ggplot2)
+library(tidyr)
+library(dplyr)
 ```
+
 ```{r}
 datos <- data.frame(
   # Tabla con las 19 comunidades autónomas
@@ -103,7 +118,7 @@ datos_largos <- datos %>%
 
 ggplot(datos_largos, aes(x = reorder(CCAA, -Valor), y = Valor, fill = Variable)) +
   geom_bar(stat = "identity", position = "dodge", color = "black") +
-  scale_fill_manual(values = c("#c0392b", "#2980b9")) +
+  scale_fill_manual(values = c("turquoise", "steelblue")) +
   labs(title = "Distribución de Paro y Psicofármacos por CCAA",
        subtitle = "Comparativa territorial (ordenado por magnitud)",
        x = "Comunidad Autónoma", 
@@ -112,6 +127,7 @@ ggplot(datos_largos, aes(x = reorder(CCAA, -Valor), y = Valor, fill = Variable))
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
+
 En cuanto al desempleo, existe una brecha enorme entre los extremos del país, por ejemplo, Ceuta (22,4%) y Melilla (20,7%) registran tasas que triplican a las de las regiones con menor paro, como Islas Baleares (6,1%) o País Vasco (7,1%).
 Por otro lado, el consumo de psicofármacos no sigue un patrón geográfico perfectamente alineado con el paro. Comunidades como Cantabria presentan el consumo más alto de España (63,22 DHD) a pesar de tener una tasa de paro baja (7,3%); mientras que otras regiones con paro alto, como Melilla, registran el consumo más bajo.
 
@@ -126,7 +142,7 @@ print(tabla_carac_2, row.names = FALSE)
 
 ```{r}
 ggplot(datos, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Gasto_Sanitario)) +
-  geom_bar(stat = "identity", fill = "#27ae60", color = "black") +
+  geom_bar(stat = "identity", fill = "pink", color = "black") +
   geom_text(aes(label = Gasto_Sanitario), vjust = -0.5, size = 3, na.rm = TRUE) +
   labs(title = "Diferencias territoriales en el Gasto Sanitario por habitante",
        subtitle = "Ordenado de mayor a menor inversión (Año 2026)",
@@ -135,6 +151,7 @@ ggplot(datos, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Gasto_Sanitario)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
+
 Podemos observar que si que existen diferencias territoriales muy significativas. Una persona en Asturias recibe casi 1.000€ más al año en inversión sanitaria pública que una persona en Murcia. Esto puede generar desigualdades en la calidad de la atención y en la prevención de enfermedades.
 
 ## PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
@@ -152,7 +169,7 @@ cor(datos$Tasa_Paro, datos$Consumo_Psicofarmacos, use = "complete.obs")
 # 3. Gráfico (solución gráfica)
 ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
   geom_point(color = "violet", size = 4) +
-  geom_smooth(method = "lm", se = FALSE, color = "orange", linetype = "dashed") +
+  geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed") +
   geom_text(aes(label = CCAA), vjust = -1, size = 3) +
   labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
        x = "Tasa de Paro (%)",
