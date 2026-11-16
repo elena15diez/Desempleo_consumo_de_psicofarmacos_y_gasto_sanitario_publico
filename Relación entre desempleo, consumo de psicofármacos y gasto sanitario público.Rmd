@@ -112,6 +112,8 @@ ggplot(datos_largos, aes(x = reorder(CCAA, -Valor), y = Valor, fill = Variable))
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
+En cuanto al desempleo, existe una brecha enorme entre los extremos del país, por ejemplo, Ceuta (22,4%) y Melilla (20,7%) registran tasas que triplican a las de las regiones con menor paro, como Islas Baleares (6,1%) o País Vasco (7,1%).
+Por otro lado, el consumo de psicofármacos no sigue un patrón geográfico perfectamente alineado con el paro. Comunidades como Cantabria presentan el consumo más alto de España (63,22 DHD) a pesar de tener una tasa de paro baja (7,3%); mientras que otras regiones con paro alto, como Melilla, registran el consumo más bajo.
 
 ### ¿Existen diferencias territoriales significativas en el gasto sanitario por habitante en España?
 ```{r}
@@ -133,7 +135,6 @@ ggplot(datos, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Gasto_Sanitario)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))
 ```
-En el gráfico verás claramente una diferencia muy grande, arriba se encuentran las que más gastan: Asturias (2506€) y País Vasco (2373€)y abajo las que menos: Murcia (1511€) y Cataluña (1515€).
 Podemos observar que si que existen diferencias territoriales muy significativas. Una persona en Asturias recibe casi 1.000€ más al año en inversión sanitaria pública que una persona en Murcia. Esto puede generar desigualdades en la calidad de la atención y en la prevención de enfermedades.
 
 ## PREGUNTA 1: ¿Existe relación entre paro y psicofármacos?
