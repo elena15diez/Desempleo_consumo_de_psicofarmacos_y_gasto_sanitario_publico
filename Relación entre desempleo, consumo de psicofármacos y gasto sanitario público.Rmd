@@ -127,8 +127,8 @@ cor(datos$Tasa_Paro, datos$Consumo_Psicofarmacos, use = "complete.obs")
 
 # 3. Gráfico (solución gráfica)
 ggplot(datos, aes(x = Tasa_Paro, y = Consumo_Psicofarmacos)) +
-  geom_point(color = "#c0392b", size = 4) +
-  geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
+  geom_point(color = "violet", size = 4) +
+  geom_smooth(method = "lm", se = FALSE, color = "orange", linetype = "dashed") +
   geom_text(aes(label = CCAA), vjust = -1, size = 3) +
   labs(title = "Relación entre Tasa de Paro y Consumo de Psicofármacos",
        x = "Tasa de Paro (%)",
@@ -160,7 +160,7 @@ cor(datos$Gasto_Sanitario, datos$Consumo_Psicofarmacos, use = "complete.obs")
 ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarmacos, fill = Gasto_Sanitario)) +
   geom_bar(stat = "identity", color = "black", width = 0.6) +
   geom_text(aes(label = Consumo_Psicofarmacos), vjust = -0.5, size = 4, fontface = "bold") +
-  scale_fill_gradient(low = "#3498db", high = "#c0392b", name = "Gasto (€)") +
+  scale_fill_gradient(low = "blue", high = "red", name = "Gasto (€)") +
   labs(title = "Consumo de Psicofármacos en CCAA con Paro Similar",
        subtitle = "Ordenadas de mayor a menor Gasto Sanitario",
        x = "Comunidad Autónoma", 
@@ -187,8 +187,8 @@ cor(datos$Tasa_Paro, datos$Gasto_Sanitario, use = "complete.obs")
 
 # 3. Gráfico (solución gráfica)
 ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
-  geom_point(color = "#2980b9", size = 4) +
-  geom_smooth(method = "lm", se = FALSE, color = "#2c3e50", linetype = "dashed") +
+  geom_point(color = "pink", size = 4) +
+  geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed") +
   geom_text(aes(label = CCAA), vjust = -1, size = 3, check_overlap = TRUE) +
   labs(title = "Relación entre Tasa de Paro y Gasto Sanitario",
        x = "Tasa de Paro (%)", y = "Gasto Sanitario (€)") +
