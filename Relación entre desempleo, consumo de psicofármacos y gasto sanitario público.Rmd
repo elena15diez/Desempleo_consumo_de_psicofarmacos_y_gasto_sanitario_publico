@@ -183,16 +183,15 @@ options(width = 500)
 print(tabla_p3, row.names = FALSE)
 
 # 2. Gráfico de barras 
-ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarmacos, fill = Gasto_Sanitario)) +
-  geom_bar(stat = "identity", color = "black", width = 0.6) +
-  geom_text(aes(label = Consumo_Psicofarmacos), vjust = -0.5, size = 4, fontface = "bold") +
-  scale_fill_gradient(low = "blue", high = "red", name = "Gasto (€)") +
+ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarmacos)) +
+  geom_bar(stat = "identity", fill = "coral", colour = "black", width = 0.6) +
+  geom_text(aes(label = Consumo_Psicofarmacos), vjust = -0.5, size = 3) +
   labs(title = "Consumo de Psicofármacos en CCAA con Paro Similar",
        subtitle = "Ordenadas de mayor a menor Gasto Sanitario",
-       x = "Comunidad Autónoma", 
+       x = "Comunidad Autónoma",
        y = "Consumo de Psicofármacos (DHD)") +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, face = "bold"))
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 ### Conclusión de la pregunta 2:
@@ -210,7 +209,7 @@ print(tabla_resumen, row.names = FALSE)
 
 # 2. Gráfico (solución gráfica)
 ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
-  geom_point(color = "pink", size = 2.5) +
+  geom_point(color = "palegreen3", size = 2.5) +
   geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed") +
   geom_text(aes(label = CCAA), vjust = -0.8, size = 2.5, angle = 45) +
   labs(title = "Relación entre Tasa de Paro y Gasto Sanitario",
