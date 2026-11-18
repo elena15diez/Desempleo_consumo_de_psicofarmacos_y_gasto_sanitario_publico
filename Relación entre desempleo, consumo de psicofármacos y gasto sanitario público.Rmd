@@ -107,9 +107,6 @@ print(tabla_carac_1, row.names = FALSE)
 ```
 
 ```{r}
-library(tidyr)
-library(ggplot2)
-
 datos_largos <- datos %>%
   select(CCAA, Tasa_Paro, Consumo_Psicofarmacos) %>%
   pivot_longer(-CCAA, names_to = "Variable", values_to = "Valor")
