@@ -211,7 +211,7 @@ print(tabla_resumen, row.names = FALSE)
 ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
   geom_point(color = "palegreen3", size = 2.5) +
   geom_smooth(method = "lm", se = FALSE, color = "black", linetype = "dashed") +
-  geom_text(aes(label = CCAA), vjust = -0.8, size = 2, angle = 45) +
+  geom_text(aes(label = CCAA), vjust = -0.8, size = 2g, angle = 45) +
   labs(title = "Relación entre Tasa de Paro y Gasto Sanitario",
        x = "Tasa de Paro (%)", y = "Gasto Sanitario (€)") +
   theme_minimal()
