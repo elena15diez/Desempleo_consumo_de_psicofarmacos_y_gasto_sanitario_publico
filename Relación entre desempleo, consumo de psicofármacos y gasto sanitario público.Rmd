@@ -1,5 +1,5 @@
 ---
-title: "Relación entre desempleo, consumo de psicofármacos y gasto sanitario público"
+title: '**Relación entre desempleo, consumo de psicofármacos y gasto sanitario público**'
 author: "Elena Diez y Amaia Bolaños"
 date: "2026-11-30"
 output: html_document
@@ -184,7 +184,7 @@ print(tabla_p3, row.names = FALSE)
 
 # 2. Gráfico de barras 
 ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarmacos)) +
-  geom_bar(stat = "identity", fill = "coral", colour = "black", width = 0.6) +
+  geom_bar(stat = "identity", fill = "lightsalmon", colour = "black", width = 0.6) +
   geom_text(aes(label = Consumo_Psicofarmacos), vjust = -0.5, size = 3) +
   labs(title = "Consumo de Psicofármacos en CCAA con Paro Similar",
        subtitle = "Ordenadas de mayor a menor Gasto Sanitario",
