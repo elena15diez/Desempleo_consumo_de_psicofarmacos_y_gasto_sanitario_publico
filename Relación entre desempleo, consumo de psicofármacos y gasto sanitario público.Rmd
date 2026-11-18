@@ -195,8 +195,8 @@ ggplot(tabla_p3, aes(x = reorder(CCAA, -Gasto_Sanitario), y = Consumo_Psicofarma
 ```
 
 ### Conclusión de la pregunta 2:
-Al analizar las comunidades con una tasa de paro similar (entre el 9% y el 15%), observamos una relación clara: las regiones que realizan un mayor esfuerzo inversor en sanidad, como Extremadura (2.288€) o Navarra (2.275€), presentan un consumo de psicofármacos menor (35-40 dosis). Por el contrario, comunidades que, con un paro similar, destinan menos recursos por habitante, como Canarias (2.136€) o Andalucía (1.870€), registran los consumos más elevados del grupo (46,84 y 39,71).
-Esto demuestra que el gasto sanitario actúa como un factor protector: un mayor presupuesto en sanidad amortigua el impacto del desempleo en la salud mental de la población. 
+Al analizar las comunidades con una tasa de paro similar (entre el 9% y el 15%), observamos una tendencia: las regiones que realizan un mayor esfuerzo inversor en sanidad, como Extremadura (2.288€) o Asturias (2.506€), presentan un consumo de psicofármacos menor (35-40 dosis). Por el contrario, comunidades que, con un paro similar, destinan menos recursos por habitante, como Canarias (2.136€) o Andalucía (1.870€), registran los consumos más elevados del grupo (46,84 y 39,71).
+Esto sugiere que el gasto sanitario actúa como un factor protector: un mayor presupuesto en sanidad amortigua el impacto del desempleo en la salud mental de la población. 
 
 ## PREGUNTA 3: ¿Las CCAA con más paro gastan menos en sanidad?
 
@@ -218,5 +218,5 @@ ggplot(datos, aes(x = Tasa_Paro, y = Gasto_Sanitario)) +
 ```
 
 ### Conclusión de la pregunta 3:
-En el gráfico se puede observar esta desigualdad territorial. Mientras que comunidades con un desempleo muy bajo, como País Vasco (7,1% de paro) o Navarra (8,1%), presentan un gasto sanitario elevado (por encima de los 2.200€), las regiones con mayor desempleo, como Andalucía (14,6%) o Castilla-La Mancha (11,8%), se sitúan en la parte más baja de inversión (por debajo de los 1.950€).
+En el gráfico se puede observar esta desigualdad territorial. Mientras que comunidades con un desempleo muy bajo, como País Vasco (7,1%) o Navarra (8,1%), presentan un gasto sanitario elevado (por encima de los 2.200€), las regiones con mayor desempleo, como Andalucía (14,6%) o Castilla-La Mancha (11,8%), se sitúan en la parte más baja de inversión (por debajo de los 1.950€).
 Por lo tanto, las comunidades que más necesidad tienen de protección social y sanitaria (por tener más paro) reciben menos recursos por habitante. Esta diferencia puede agravar las desigualdades en salud mental, ya que las regiones más castigadas por el desempleo son también las que menos presupuesto destinan a atender sus consecuencias.
